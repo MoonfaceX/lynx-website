@@ -1,0 +1,480 @@
+{
+  "title": "Interfaces",
+  "flag": "##",
+  "children": [
+    {
+      "title": "ScrollViewProps",
+      "flag": "###",
+      "children": [
+        {
+          "title": "Properties",
+          "flag": " ",
+          "children": [
+            {
+              "title": "属性",
+              "flag": " ",
+              "children": [
+                {
+                  "name": "bounces",
+                  "type": "boolean",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "Enable bounce effect"
+                    }
+                  ],
+                  "defaultValue": "false",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "enable-scroll",
+                  "type": "boolean",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "Enable dragging"
+                    }
+                  ],
+                  "defaultValue": "false",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "force-can-scroll",
+                  "type": "boolean",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "On iOS, force-can-scroll should be used with ios-block-gesture-class and ios-recognized-view-tag. Can be used alone on Android."
+                    }
+                  ],
+                  "defaultValue": "false",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "initial-scroll-offset",
+                  "type": "number",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "Initial scroll position, only effective once"
+                    }
+                  ],
+                  "defaultValue": "0",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "initial-scroll-to-index",
+                  "type": "number",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "Scroll to specified child node on first screen, only effective once. All direct child nodes must be flatten=false."
+                    }
+                  ],
+                  "defaultValue": "0",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "ios-block-gesture-class",
+                  "type": "string",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "Force-can-scroll should be used with ios-block-gesture-class、ios-recognized-view-tag. Specify the class name of scrollable container that should be blocked by force-can-scroll. Given by container's developer."
+                    }
+                  ],
+                  "defaultValue": "none",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": false,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "ios-recognized-view-tag",
+                  "type": "number",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "force-can-scroll should be used with ios-block-gesture-class、ios-recognized-view-tag. Specify scrollable container's tag, the UIView's tag. Set and given by container's developer."
+                    }
+                  ],
+                  "defaultValue": "none",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": false,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "lower-threshold",
+                  "type": "number",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "Not recommended to use. Please use lower-threshold-item-count instead. Set upper threshold to bindscrolltoupper event."
+                    }
+                  ],
+                  "defaultValue": "0",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "scroll-bar-enable",
+                  "type": "boolean",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "Enable scrollbar"
+                    }
+                  ],
+                  "defaultValue": "false",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "scroll-left",
+                  "type": "number",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "Please use initial-scroll-offset or ScrollTo method. Set the content offset from the left."
+                    }
+                  ],
+                  "defaultValue": "0",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "scroll-orientation",
+                  "type": "'vertical' | 'horizontal'",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "Replacement of scroll-x and scroll-y"
+                    }
+                  ],
+                  "defaultValue": "",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "scroll-to-index",
+                  "type": "number",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "Please use initial-scroll-index or ScrollTo method。Set the first item at the first screen"
+                    }
+                  ],
+                  "defaultValue": "0",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "scroll-top",
+                  "type": "number",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "Please use initial-scroll-offset or ScrollTo method. Set the content offset from the top."
+                    }
+                  ],
+                  "defaultValue": "0",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "scroll-x",
+                  "type": "boolean",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "Scroll horizontaly."
+                    }
+                  ],
+                  "defaultValue": "false",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "scroll-y",
+                  "type": "boolean",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "Scroll vertically"
+                    }
+                  ],
+                  "defaultValue": "false",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "upper-threshold",
+                  "type": "number",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "Not recommended to use. Please use upper-threshold-item-count instead. Set upper threshold to bindscrolltoupper event."
+                    }
+                  ],
+                  "defaultValue": "0",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                }
+              ]
+            },
+            {
+              "title": "事件",
+              "flag": " ",
+              "children": [
+                {
+                  "name": "bindcontentsizechanged",
+                  "type": "EventHandler",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "This event is triggered when the scrollview's content size changed."
+                    }
+                  ],
+                  "defaultValue": "none",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "bindscroll",
+                  "type": "EventHandler",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "This event is triggered when the scrollview is scrolling."
+                    }
+                  ],
+                  "defaultValue": "none",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "bindscrollend",
+                  "type": "EventHandler",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "This event is triggered when the scrollview's scroll ended."
+                    }
+                  ],
+                  "defaultValue": "none",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "bindscrolltolower",
+                  "type": "EventHandler",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "This event is triggered when the lower/right edge of the scrolling area intersects with the visible area defined by the lowerThreshold."
+                    }
+                  ],
+                  "defaultValue": "none",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "bindscrolltoloweredge",
+                  "type": "EventHandler",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "scrollview scrolls to lower edge"
+                    }
+                  ],
+                  "defaultValue": "none",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "bindscrolltonormalstate",
+                  "type": "EventHandler",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "scrollview scrolls to normal position. Not at upper or lower edge"
+                    }
+                  ],
+                  "defaultValue": "none",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "bindscrolltoupper",
+                  "type": "EventHandler",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "This event is triggered when the upper/left edge of the scrolling area intersects with the visible area defined by the upperThreshold."
+                    }
+                  ],
+                  "defaultValue": "none",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "bindscrolltoupperedge",
+                  "type": "EventHandler",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "scrollview scrolls to upper edge"
+                    }
+                  ],
+                  "defaultValue": "none",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "scrollTo",
+      "type": "method",
+      "summary": [
+        {
+          "kind": "text",
+          "text": "Target item index"
+        }
+      ],
+      "description": "Target item index",
+      "params": {
+        "index": {
+          "type": "number",
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Target item index"
+            }
+          ],
+          "defaultValue": "0",
+          "isOption": true
+        },
+        "offset": {
+          "type": "number",
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Offset relative to target node"
+            }
+          ],
+          "defaultValue": "",
+          "isOption": true
+        },
+        "smooth": {
+          "type": "boolean",
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Enable scroll animation"
+            }
+          ],
+          "defaultValue": "",
+          "isOption": true
+        }
+      },
+      "hasSuccess": false,
+      "hasFail": false,
+      "isSupportIOS": false,
+      "isSupportAndroid": false,
+      "isSupportHarmony": false,
+      "codeExample": {
+        "method": "scrollTo",
+        "params": {
+          "index": {
+            "type": "number",
+            "summary": [
+              {
+                "kind": "text",
+                "text": "Target item index"
+              }
+            ],
+            "defaultValue": "0",
+            "isOption": true
+          },
+          "offset": {
+            "type": "number",
+            "summary": [
+              {
+                "kind": "text",
+                "text": "Offset relative to target node"
+              }
+            ],
+            "defaultValue": "",
+            "isOption": true
+          },
+          "smooth": {
+            "type": "boolean",
+            "summary": [
+              {
+                "kind": "text",
+                "text": "Enable scroll animation"
+              }
+            ],
+            "defaultValue": "",
+            "isOption": true
+          }
+        },
+        "hasCallbacks": false
+      }
+    }
+  ]
+}

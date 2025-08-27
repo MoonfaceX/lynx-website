@@ -56,6 +56,7 @@
     "@lynx-js/lynx-compat-data": "workspace:*",
     "@lynx-js/react": "^0.107.1",
     "@lynx-js/testing-environment": "npm:@lynx-js/test-environment@0.0.1",
+    "@lynx-js/types": "^3.3.0",
     "@mdn/minimalist": "^2.0.4",
     "@rsbuild/plugin-less": "^1.1.1",
     "@rsbuild/plugin-sass": "^1.2.2",

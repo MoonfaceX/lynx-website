@@ -121,6 +121,8 @@ export async function runTypeDocForPackage(
   const project = await app.convert();
 
   if (project) {
+    // await app.generateDocs(project, absoluteOutputDir);
+
     if (packageConfig.generateJson) {
       const jsonGenRootPath = `scripts/typedoc/gen/${locale}`;
 
@@ -137,13 +139,12 @@ export async function runTypeDocForPackage(
         path.join(jsonGenRootPath, `./${project.name}`, './data.json'),
       );
 
+      console.log('mfs: ', path.join(absoluteOutputDir, './tpl.mdx'));
       await doGenTplWithData(
         path.join(jsonGenRootPath, `./${project.name}`, './data.json'),
-        path.join(jsonGenRootPath, `./${project.name}`, './tpl.mdx'),
+        path.join(absoluteOutputDir, './tpl.mdx'),
       );
     }
-
-    await app.generateDocs(project, absoluteOutputDir);
   }
 
   return app;

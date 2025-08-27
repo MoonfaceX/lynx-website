@@ -8,6 +8,22 @@ import type { PackageConfig } from '../types/PackageConfig.js';
  * - The name passed to typedoc as `--name` option.
  */
 export const PACKAGES: Record<string, PackageConfig> = {
+  // pnpm run typedoc --package lynx-js-element-types
+  'lynx-js-element-types': {
+    out: 'api/lynx-js-element-types',
+    tsconfig: 'scripts/typedoc/tsconfigs/lynx-js-element-types.json',
+    en: {
+      entryPoints: [
+        'node_modules/@lynx-js/types/types/common/element/scroll-view.d.ts',
+      ],
+    },
+    zh: {
+      entryPoints: [
+        'node_modules/@lynx-js/types/types/common/element/list.d.ts',
+      ],
+    },
+    generateJson: true,
+  },
   'reactlynx-testing-library': {
     out: 'api/reactlynx-testing-library',
     tsconfig: 'scripts/typedoc/tsconfigs/reactlynx-testing-library.json',

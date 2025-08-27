@@ -45,7 +45,6 @@ const doFindObjectWithTag = (obj, tagName) => {
 const doSingleTypeCalc = (t) => {
   try {
     const { type, name } = t;
-
     switch (type) {
       case 'intrinsic':
       case 'reference':
@@ -53,7 +52,7 @@ const doSingleTypeCalc = (t) => {
       case 'array':
         return `${t.elementType.name}[]`;
       case 'literal':
-        return t.value;
+        return `\'${t.value}\'`;
       case 'templateLiteral':
         return t.head + t.tail?.map((ti) => ti?.[1]).join(',');
       default:
@@ -114,8 +113,6 @@ const doTypeCalc = (t) => {
         return t;
     }
   } catch (e) {
-    console.log(e);
-
     return t;
   }
 };
@@ -185,6 +182,18 @@ const doMoreForItem = (item) => {
   // 默认值
   const defaultValue = doFindObjectWithTagValue(item, 'tag', '@defaultValue');
 
+  const inheritedFrom = item.inheritedFrom?.['name'];
+  if (inheritedFrom /** && inheritedFrom.startsWith('StandardProps')**/) {
+    return null;
+  }
+
+  if (name.startsWith('accessibility')) {
+    console.log('name', name, item);
+  }
+  if (name.startsWith('ios-index-as-z')) {
+    console.log('name', name, item);
+  }
+
   return {
     name,
     type: doTypeCalc(type),
@@ -194,6 +203,79 @@ const doMoreForItem = (item) => {
     isSupportIOS,
     isSupportAndroid,
     isSupportHarmony,
+  };
+};
+
+const doGetUIMethod = (method, params, success, fail) => {
+  // 获取方法名称（去掉Method后缀）
+  const methodName = method?.type?.value || 'unknownMethod';
+
+  // 处理params参数结构
+  const paramsStructure = {};
+  if (params?.type?.declaration?.children) {
+    params.type.declaration.children.forEach((child) => {
+      const paramItem = doMoreForItem(child);
+      if (paramItem) {
+        paramsStructure[paramItem.name] = {
+          type: paramItem.type,
+          summary: paramItem.summary,
+          defaultValue: paramItem.defaultValue,
+          isOption: paramItem.isOption,
+        };
+      }
+    });
+  }
+
+  // 处理success和fail回调
+  const hasSuccess = success && !success.flags?.isInherited;
+  const hasFail = fail && !fail.flags?.isInherited;
+
+  // 获取平台支持信息
+  const isSupportIOS =
+    !!doFindObjectWithTagValue(method, 'tag', '@iOS') ||
+    !!doFindObjectWithTagValue(params, 'tag', '@iOS');
+  const isSupportAndroid =
+    !!doFindObjectWithTagValue(method, 'tag', '@Android') ||
+    !!doFindObjectWithTagValue(params, 'tag', '@Android');
+  const isSupportHarmony =
+    !!doFindObjectWithTagValue(method, 'tag', '@Harmony') ||
+    !!doFindObjectWithTagValue(params, 'tag', '@Harmony');
+
+  // 生成方法描述
+  let methodDescription = '';
+  const methodSummary =
+    doFindObjectWithTag(method, 'summary') ||
+    doFindObjectWithTag(params, 'summary');
+  if (methodSummary && methodSummary.length > 0) {
+    methodDescription = methodSummary.map((s: any) => s.text).join(' ');
+  } else {
+    // 如果没有summary，提供一个默认描述
+    switch (methodName) {
+      case 'scrollTo':
+        methodDescription = '将 <scroll-view> 的内容定位到特定位置。';
+        break;
+      // 可以为其他常见方法添加默认描述
+      default:
+        methodDescription = `调用 ${methodName} 方法。`;
+    }
+  }
+
+  return {
+    name: methodName,
+    type: 'method', // 标识为方法类型
+    summary: methodSummary,
+    description: methodDescription,
+    params: paramsStructure,
+    hasSuccess,
+    hasFail,
+    isSupportIOS,
+    isSupportAndroid,
+    isSupportHarmony,
+    codeExample: {
+      method: methodName,
+      params: paramsStructure,
+      hasCallbacks: hasSuccess || hasFail,
+    },
   };
 };
 
@@ -220,10 +302,62 @@ const doGetChildren = (
       return doMoreForItem(f);
     });
 
+    // 根据属性名称分类
+    const properties = [];
+    const events = [];
+    const methods = [];
+
+    formatChildren
+      .filter((item) => item != null)
+      .forEach((item) => {
+        if (item.name) {
+          if (item.name.startsWith('bind')) {
+            // 以 bind 开头的是事件
+            events.push(item);
+          } else if (item.name.endsWith('Method')) {
+            // 以 Method 结尾的是方法
+            methods.push(item);
+          } else {
+            // 其他的是属性
+            properties.push(item);
+          }
+        }
+      });
+
+    // 创建分类后的结构
+    const categorizedChildren = [];
+
+    if (properties.length > 0) {
+      categorizedChildren.push({
+        title: '属性',
+        flag: ' ',
+        children: properties,
+      });
+    }
+
+    if (events.length > 0) {
+      categorizedChildren.push({
+        title: '事件',
+        flag: ' ',
+        children: events,
+      });
+    }
+
+    if (methods.length > 0) {
+      categorizedChildren.push({
+        title: '方法',
+        flag: ' ',
+        children: methods,
+      });
+    }
+
     return {
       title,
       flag,
-      children: formatChildren,
+      children:
+        categorizedChildren.length > 0
+          ? categorizedChildren
+          : formatChildren.filter((item) => item != null),
     };
   });
 };
@@ -264,6 +398,100 @@ const doGenDocData = async (jsonPath: string, savePath: string) => {
         title: rootTitle,
         flag: rootFlag,
         children: rootArray?.map((ra) => {
+          if (ra.name.endsWith('Method')) {
+            const method = ra.children.filter(
+              (item) => item.name === 'method',
+            )?.[0];
+            const params = ra.children.filter(
+              (item) => item.name === 'params',
+            )?.[0];
+            const success = ra.children.filter(
+              (item) => item.name === 'success',
+            )?.[0];
+            const fail = ra.children.filter(
+              (item) => item.name === 'fail',
+            )?.[0];
+
+            // console.log('method', method);
+            // console.log('params', params);
+            // console.log('success', success);
+            // console.log('fail', fail);
+            /**
+             * method {
+  id: 387,
+  name: 'method',
+  variant: 'declaration',
+  kind: 1024,
+  flags: { isExternal: true },
+  sources: [ { fileName: 'element/scroll-view.d.ts', line: 260, character: 2 } ],
+  type: { type: 'literal', value: 'scrollTo' }
+}
+params {
+  id: 388,
+  name: 'params',
+  variant: 'declaration',
+  kind: 1024,
+  flags: { isExternal: true },
+  sources: [ { fileName: 'element/scroll-view.d.ts', line: 261, character: 2 } ],
+  type: {
+    type: 'reflection',
+    declaration: {
+      id: 389,
+      name: '__type',
+      variant: 'declaration',
+      kind: 65536,
+      flags: [Object],
+      children: [Array],
+      groups: [Array],
+      sources: [Array]
+    }
+  }
+}
+success {
+  id: 393,
+  name: 'success',
+  variant: 'declaration',
+  kind: 1024,
+  flags: { isExternal: true, isOptional: true, isInherited: true },
+  sources: [ { fileName: 'events.d.ts', line: 298, character: 2 } ],
+  type: {
+    type: 'reference',
+    target: {
+      sourceFileName: 'node_modules/@lynx-js/types/types/common/events.d.ts',
+      qualifiedName: 'Callback'
+    },
+    typeArguments: [ [Object] ],
+    name: 'Callback',
+    package: '@lynx-js/types'
+  },
+  inheritedFrom: { type: 'reference', target: -1, name: 'BaseMethod.success' }
+}
+fail {
+  id: 394,
+  name: 'fail',
+  variant: 'declaration',
+  kind: 1024,
+  flags: { isExternal: true, isOptional: true, isInherited: true },
+  sources: [ { fileName: 'events.d.ts', line: 299, character: 2 } ],
+  type: {
+    type: 'reference',
+    target: {
+      sourceFileName: 'node_modules/@lynx-js/types/types/common/events.d.ts',
+      qualifiedName: 'Callback'
+    },
+    typeArguments: [ [Object] ],
+    name: 'Callback',
+    package: '@lynx-js/types'
+  },
+  inheritedFrom: { type: 'reference', target: -1, name: 'BaseMethod.fail' }
+}
+             */
+
+            return doGetUIMethod(method, params, success, fail); // gen method mdx;
+          }
+
+          console.log('non method', ra.name);
+
           return {
             title: ra.name,
             flag: rootFlag + '#',
@@ -278,8 +506,6 @@ const doGenDocData = async (jsonPath: string, savePath: string) => {
 
       fs.writeFileSync(savePath, JSON.stringify(docData, null, 2));
     } catch (e) {
-      console.log(e);
-
       return !!0;
     }
   }

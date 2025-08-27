@@ -1,0 +1,2589 @@
+{
+  "title": "接口",
+  "flag": "##",
+  "children": [
+    {
+      "title": "ListRowProps",
+      "flag": "###",
+      "children": [
+        {
+          "title": "属性",
+          "flag": " ",
+          "children": []
+        }
+      ]
+    },
+    {
+      "title": "ListProps",
+      "flag": "###",
+      "children": [
+        {
+          "title": "属性",
+          "flag": " ",
+          "children": [
+            {
+              "title": "属性",
+              "flag": " ",
+              "children": [
+                {
+                  "name": "anchor-align",
+                  "type": "'toTop' | 'toBottom'",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "'anchor-align-to-bottom' will keep the bottom of the anchor at the same distance from the visible area, while 'anchor-align-to-top' will keep the top of the anchor at the same distance from the visible area."
+                    }
+                  ],
+                  "defaultValue": "'toTop'",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": false,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "anchor-priority",
+                  "type": "'fromBegin' | 'fromEnd'",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "Determine whether the list is laid out from the top or from the bottom."
+                    }
+                  ],
+                  "defaultValue": "'fromBegin'",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": false,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "anchor-visibility",
+                  "type": "'noAdjustment' | 'show' | 'hide'",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "\"The dot element is positioned at the fully visible position (show) or at the point just invisible (hide), and no adjustment is made by default.\""
+                    }
+                  ],
+                  "defaultValue": "'noAdjustment'",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": false,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "android-diffable",
+                  "type": "boolean",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "Control whether dataSet can be used as the unique identifier. It will call RecyclerView.setHasStableIds() internally."
+                    }
+                  ],
+                  "defaultValue": "false",
+                  "isOption": true,
+                  "isSupportIOS": false,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "android-enable-focus-search",
+                  "type": "boolean",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "Since RecyclerView is a collection ViewGroup that includes virtual children (items that are in the Adapter but not visible in the UI), it employs a more involved focus search strategy that differs from other ViewGroups, which may lead to unexpected scroll behavior. This property is used to control whether the focus search strategy is enabled, and if set to false, the focus search strategy of RecyclerView will be disabled and directly return the current focused view in focusSearch method."
+                    }
+                  ],
+                  "defaultValue": "true",
+                  "isOption": true,
+                  "isSupportIOS": false,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "android-enable-gap-item-decoration",
+                  "type": "boolean",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "In Android, this attribute controls whether the list uses the RecyclerView's ItemDecoration to implement the main-axis-gap and cross-axis-gap."
+                    }
+                  ],
+                  "defaultValue": "false",
+                  "isOption": true,
+                  "isSupportIOS": false,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "android-enable-item-prefetch",
+                  "type": "boolean",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "Whether to enable the self-preloading strategy of the list system."
+                    }
+                  ],
+                  "defaultValue": "0",
+                  "isOption": true,
+                  "isSupportIOS": false,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "android-new-scroll-top",
+                  "type": "boolean",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "Solve the problem of inaccurate sliding distance in the list scrolling event callback. It is recommended to enable it."
+                    }
+                  ],
+                  "defaultValue": "false",
+                  "isOption": true,
+                  "isSupportIOS": false,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "android-preference-consume-gesture",
+                  "type": "boolean",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "Notify the parent view not to intercept the event. Enable this when the list is in a client container (RecyclerView) and needs to be scrollable."
+                    }
+                  ],
+                  "defaultValue": "false",
+                  "isOption": true,
+                  "isSupportIOS": false,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "android-stack-from-end",
+                  "type": "boolean",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "Control the list to fill the elements from the bottom. It is used in reverse layout scenarios such as message list."
+                    }
+                  ],
+                  "defaultValue": "false",
+                  "isOption": true,
+                  "isSupportIOS": false,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "android-trigger-sticky-layout",
+                  "type": "boolean",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "In some Android scenarios, the element that is currently being ceilinged or floored may not be correctly measured and laid out, resulting in blank rendering. Therefore, it is recommended to enable it."
+                    }
+                  ],
+                  "defaultValue": "false",
+                  "isOption": true,
+                  "isSupportIOS": false,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "bounces",
+                  "type": "boolean",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "Control whether list should produce bounces effect when scrolling past its content boundaries."
+                    }
+                  ],
+                  "defaultValue": "true",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": false,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "column-count",
+                  "type": "number",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "The number of columns for a list, only effective when list-type is 'flow' or 'waterfall'."
+                    }
+                  ],
+                  "defaultValue": "0",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "component-init-measure",
+                  "type": "boolean",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "Under asynchronous layout, it is recommended to enable this property if a child node renders blank."
+                    }
+                  ],
+                  "defaultValue": "false",
+                  "isOption": true,
+                  "isSupportIOS": false,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "delete-regress-policy",
+                  "type": "'toTop' | 'toBottom'",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "When all nodes on the screen are deleted, find the anchor point outside the top/bottom area."
+                    }
+                  ],
+                  "defaultValue": "'toTop'",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": false,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "enable-async-list",
+                  "type": "boolean",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "Enable asynchronous strategy"
+                    }
+                  ],
+                  "defaultValue": "false",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "enable-disappear",
+                  "type": "boolean",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "Allows notification to send disappear event. It is recommended to enable."
+                    }
+                  ],
+                  "defaultValue": "false",
+                  "isOption": true,
+                  "isSupportIOS": false,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "enable-nested-scroll",
+                  "type": "boolean",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "scroll-view and list can be nested for scrolling. The scrolling of the child view triggered by a single gesture can drive the scrolling of the parent view when the inertial scrolling touches the edge."
+                    }
+                  ],
+                  "defaultValue": "false",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": false,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "enable-new-exposure-strategy",
+                  "type": "boolean",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "Indicates whether to use the new exposure strategy. The new exposure strategy handles the situation where the node is covered, such as the list nested in x-viewpager-ng or x-swiper. The performance of the new exposure strategy is slightly worse than the old one, but the result is more accurate."
+                    }
+                  ],
+                  "defaultValue": "false",
+                  "isOption": true,
+                  "isSupportIOS": false,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "enable-rtl",
+                  "type": "boolean",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "Control the switch of RTL (Right-to-Left) mode, the order of vertical two-column layout will also be mirrored and upside-down."
+                    }
+                  ],
+                  "defaultValue": "false",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "enable-scroll",
+                  "type": "boolean",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "Whether to allow scrolling for a list."
+                    }
+                  ],
+                  "defaultValue": "true",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "enable-size-cache",
+                  "type": "boolean",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "Cache the size when rendering components in child nodes of List. It is only allowed to enable under asynchronous mode."
+                    }
+                  ],
+                  "defaultValue": "false",
+                  "isOption": true,
+                  "isSupportIOS": false,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "experimental-batch-render-strategy",
+                  "type": "BatchRenderStrategy",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "The strategy of list batch rendering in Fiber arch. The value of this property can be set to the value of Enum BatchRenderStrategy."
+                    }
+                  ],
+                  "defaultValue": "BatchRenderStrategy.DEFAULT",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "experimental-disable-filter-scroll",
+                  "type": "boolean",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "To solve the conflict between list and x-refresh-view"
+                    }
+                  ],
+                  "defaultValue": "false",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": false,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "experimental-enable-preload-section",
+                  "type": "boolean",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "After the layout of the list is completed, preload the vdom of the remaining nodes in advance to improve the scrolling frame rate of the subsequent list."
+                    }
+                  ],
+                  "defaultValue": "false",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "experimental-ios-gesture-frequency-increasing",
+                  "type": "boolean",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "Attempt to increase the CPU frequency if a gesture is set to the list"
+                    }
+                  ],
+                  "defaultValue": "false",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": false,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "experimental-max-fling-distance-ratio",
+                  "type": "number | 'auto'",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "Limit the inertia scrolling distance of asynchronous list to this value multiplied by the height (width) of the list, in order to reduce the chance of white screen. When it is set to 'auto', it will automatically calculate the rendering distance in preload-buffer when asynchronous list is enabled to ensure there is no white screen, but the inertia scrolling experience may be abnormal."
+                    }
+                  ],
+                  "defaultValue": "undefined",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "experimental-recycle-available-item-before-layout",
+                  "type": "boolean",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "Control whether the list recycle available items before layout, so list can reuse these items in this layout pass. By default, the list will recycle all items after layout."
+                    }
+                  ],
+                  "defaultValue": "false",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": true
+                },
+                {
+                  "name": "experimental-recycle-sticky-item",
+                  "type": "boolean",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "The property to control whether recycle sticky item. The default value is true if sdk version >= 3.4 and false if sdk version < 3.4."
+                    }
+                  ],
+                  "defaultValue": "false",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "experimental-update-sticky-for-diff",
+                  "type": "boolean",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "The property to control whether to update sticky item for diff. The default value is true if sdk version >= 3.4 and false if sdk version < 3.4."
+                    }
+                  ],
+                  "defaultValue": "false",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "force-can-scroll",
+                  "type": "boolean",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "On iOS, force-can-scroll should be used with ios-block-gesture-class and ios-recognized-view-tag. Can be used alone on Android."
+                    }
+                  ],
+                  "defaultValue": "false",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "initial-scroll-index",
+                  "type": "number",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "Allow frontend code to specify the automatic positioning of the list after rendering, only valid for single columns."
+                    }
+                  ],
+                  "defaultValue": "0",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "insert-anchor-mode",
+                  "type": "'outside' | 'inside'",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "Using 'outside' can make the inserted element visible at the edge of the screen, and using 'inside' can make the inserted element invisible at the edge of the screen."
+                    }
+                  ],
+                  "defaultValue": "'inside'",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": false,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "internal-cell-appear-notification",
+                  "type": "boolean",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "From version 2.17 and above, you can directly use should-request-state-restore instead of internal-cell-appear-notification/internal-cell-prepare-for-reuse-notification/internal-cell-disappear-notification. The lifecycle of element layer reuse solves the problem of reuse status disorder in the UI layer. It is recommended to enable it when there is <scroll-view/> in the list item."
+                    }
+                  ],
+                  "defaultValue": "false",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "internal-cell-disappear-notification",
+                  "type": "boolean",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "From version 2.17 and above, you can directly use should-request-state-restore instead of internal-cell-appear-notification/internal-cell-prepare-for-reuse-notification/internal-cell-disappear-notification. The lifecycle of element layer reuse solves the problem of reuse status disorder in the UI layer. It is recommended to enable it when there is <scroll-view/> in the list item."
+                    }
+                  ],
+                  "defaultValue": "false",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "internal-cell-prepare-for-reuse-notification",
+                  "type": "boolean",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "From version 2.17 and above, you can directly use should-request-state-restore instead of internal-cell-appear-notification/internal-cell-prepare-for-reuse-notification/internal-cell-disappear-notification. The lifecycle of element layer reuse solves the problem of reuse status disorder in the UI layer. It is recommended to enable it when there is <scroll-view/> in the list item."
+                    }
+                  ],
+                  "defaultValue": "false",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "ios-enable-adjust-offset-for-selfsizing",
+                  "type": "boolean",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "Deprecated"
+                    }
+                  ],
+                  "defaultValue": "false",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": false,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "ios-enable-align-height",
+                  "type": "boolean",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "There are stability issues. Please use "
+                    },
+                    {
+                      "kind": "code",
+                      "text": "`<Component align-height={true}/>`"
+                    },
+                    {
+                      "kind": "text",
+                      "text": " instead. It is not recommended to use."
+                    }
+                  ],
+                  "defaultValue": "false",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": false,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "ios-fix-offset-from-start",
+                  "type": "boolean",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "To solve the flickering issue of list, it's only necessary to enable when using bottom-up layout. It's recommended to understand the principle before using."
+                    }
+                  ],
+                  "defaultValue": "false",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": false,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "ios-fixed-content-offset",
+                  "type": "boolean",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "To solve the flickering issue of list, it's recommended to enable it."
+                    }
+                  ],
+                  "defaultValue": "false",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": false,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "ios-forbid-single-sided-bounce",
+                  "type": "'upperBounce' | 'lowerBounce' | 'none'",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "”upperBounce“ can only forbid bounces effect at top or left (right for RTL); ”lowerBounce“ can only forbid bounces effect at bottom or right (left for RTL). iOS uses bounces to implement refresh-view. This prop can be used when you need a refresh-view without bounces on the other side."
+                    }
+                  ],
+                  "defaultValue": "\"none\"",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": false,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "ios-force-reload-data",
+                  "type": "boolean",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "Deprecated"
+                    }
+                  ],
+                  "defaultValue": "true",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": false,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "ios-index-as-z-index",
+                  "type": "boolean",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "z-index is undefined by default. When enabled, z-index will be assigned in ascending order for each item."
+                    }
+                  ],
+                  "defaultValue": "false",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": false,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "ios-no-recursive-layout",
+                  "type": "boolean",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "Deprecated"
+                    }
+                  ],
+                  "defaultValue": "true",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": false,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "ios-scroll-emitter-helper",
+                  "type": "boolean",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "List scrolling event refactoring switch. It is recommended to enable it."
+                    }
+                  ],
+                  "defaultValue": "false",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": false,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "ios-scrolls-to-top",
+                  "type": "boolean",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "Whether to scroll to the top when the iOS status bar is clicked. Note that even if it is set to true, it may not scroll to the top. In such cas, you need to check the behavior of other scrollable components."
+                    },
+                    {
+                      "kind": "inline-tag",
+                      "tag": "@link",
+                      "text": "Reference",
+                      "target": "https://developer.apple.com/documentation/uikit/uiscrollview/1619421-scrollstotop?language=objc"
+                    }
+                  ],
+                  "defaultValue": "undefined",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": false,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "ios-update-valid-layout",
+                  "type": "boolean",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "Deprecated"
+                    }
+                  ],
+                  "defaultValue": "true",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": false,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "item-snap",
+                  "type": "ListItemSnapAlignment",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "Enable the paging effect, and after each scroll, the list-item will stop at a specified position. For list-type:single only/"
+                    }
+                  ],
+                  "defaultValue": "undefined",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "list-debug-info-level",
+                  "type": "number",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "Warning: It is not recommended to enable it in the production environment. Adjust the level of detail for bindlistdebugevent, with 0 meaning no output, 1 meaning outputting warnings, 2 meaning outputting information, and 3 meaning outputting detailed debug information."
+                    }
+                  ],
+                  "defaultValue": "2",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "list-type",
+                  "type": "'single' | 'flow' | 'waterfall'",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "layout type of the list"
+                    }
+                  ],
+                  "defaultValue": "\"single\"",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "lower-threshold",
+                  "type": "number",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "During a single sliding process, when the lower_distance is first smaller than the value specified by lower-threshold, a scrolltolower event is triggered. When lower_distance is already smaller than the value specified by lower-threshold, the scrolltolower event will no longer be triggered."
+                    }
+                  ],
+                  "defaultValue": "50",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "lower-threshold-item-count",
+                  "type": "number",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "When scrolling down, when the number of remaining displayable child nodes at the bottom is first less than lower-threshold-item-count, a scrolltolower event is triggered. If lower-threshold-item-count is specified, lower-threshold is not effective."
+                    }
+                  ],
+                  "defaultValue": "none",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "max-fling-velocity-percent",
+                  "type": "number",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "The maximum scrolling speed of the list, with a value between [0,1]."
+                    }
+                  ],
+                  "defaultValue": "1.0",
+                  "isOption": true,
+                  "isSupportIOS": false,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "need-visible-item-info",
+                  "type": "boolean",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "Control whether the 'attachedCells' is included in the scroll event callback parameters on native list."
+                    }
+                  ],
+                  "defaultValue": "false",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "needs-visible-cells",
+                  "type": "boolean",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "Control whether the 'attachedCells' is included in the scroll event callback parameters."
+                    }
+                  ],
+                  "defaultValue": "false",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "no-invalidate",
+                  "type": "boolean",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "Interrupt List rendering switch. It is usually used when creating drag-and-drop effects to prevent the list from refreshing child nodes."
+                    }
+                  ],
+                  "defaultValue": "false",
+                  "isOption": true,
+                  "isSupportIOS": false,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "over-scroll",
+                  "type": "boolean",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "Control whether list should produce over-scroll effect when scrolling past its content boundaries."
+                    }
+                  ],
+                  "defaultValue": "false",
+                  "isOption": true,
+                  "isSupportIOS": false,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "paging-enabled",
+                  "type": "boolean",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "The difference of double-sided page turning effect: On Android, it controls scrolling one child node at a time; on iOS, it controls scrolling one list viewport distance at a time."
+                    }
+                  ],
+                  "defaultValue": "false",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "preload-buffer-count",
+                  "type": "number",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "Preload count."
+                    }
+                  ],
+                  "defaultValue": "0",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "scroll-bar-enable",
+                  "type": "boolean",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "Whether to display the scrollbar of the list"
+                    }
+                  ],
+                  "defaultValue": "true",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": false,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "scroll-event-throttle",
+                  "type": "number",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "Specify the callback frequency of the scroll event by passing in a value, which specifies how many milliseconds (ms)  "
+                    },
+                    {
+                      "kind": "code",
+                      "text": "`<list>`"
+                    },
+                    {
+                      "kind": "text",
+                      "text": "  will call the scroll callback event during scrolling."
+                    }
+                  ],
+                  "defaultValue": "200",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "scroll-orientation",
+                  "type": "'vertical' | 'horizontal'",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "Replacement of vertical-orientation"
+                    }
+                  ],
+                  "defaultValue": "",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "should-request-state-restore",
+                  "type": "boolean",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "The lifecycle of element layer reuse. It solves the problem of reuse status disorder in the UI layer. It is recommended to enable it when there is <scroll-view/> in the list item. It replaces internal-cell-appear-notification, internal-cell-disappear-notification, and internal-cell-prepare-for-reuse-notification."
+                    }
+                  ],
+                  "defaultValue": "false",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "sticky",
+                  "type": "boolean",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "The ceiling or floor effect is not compatible with flatten."
+                    }
+                  ],
+                  "defaultValue": "false",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "sticky-buffer-count",
+                  "type": "number",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "The property to set the capacity of sticky item cache. The default value is 1 if thread mode is ALL_ON_UI and 2 if thread mode is MOST_ON_TASM / PART_ON_LAYOUT / MULTI_THREADS."
+                    }
+                  ],
+                  "defaultValue": "1",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "sticky-offset",
+                  "type": "number",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "The distance between the ceiling or floor position and the top or bottom of the list, in pixels."
+                    }
+                  ],
+                  "defaultValue": "0",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "sticky-with-bounces",
+                  "type": "boolean",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "When enabled, the upper or lower element will also be shifted together with the bounces effect."
+                    }
+                  ],
+                  "defaultValue": "false",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": false,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "temporary-nested-scroll-backward",
+                  "type": "'selfOnly' | 'selfFirst' | 'parentFirst' | 'parallel'",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "NestedScrollOptions for scrollBackward"
+                    }
+                  ],
+                  "defaultValue": "",
+                  "isOption": true,
+                  "isSupportIOS": false,
+                  "isSupportAndroid": false,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "temporary-nested-scroll-forward",
+                  "type": "'selfOnly' | 'selfFirst' | 'parentFirst' | 'parallel'",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "NestedScrollOptions for scrollForward"
+                    }
+                  ],
+                  "defaultValue": "",
+                  "isOption": true,
+                  "isSupportIOS": false,
+                  "isSupportAndroid": false,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "touch-scroll",
+                  "type": "boolean",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "Whether to allow scrolling for a list. It's recommended to enable 'enable-scroll=true' and disable 'touch-scroll' on Android."
+                    }
+                  ],
+                  "defaultValue": "true",
+                  "isOption": true,
+                  "isSupportIOS": false,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "update-animation",
+                  "type": "'none' | 'default'",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "Specify this property as 'default' to enable update animation for the list."
+                    }
+                  ],
+                  "defaultValue": "\"none\"",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "upper-threshold",
+                  "type": "number",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "During a single sliding process, when the upper_distance is first smaller than the value specified by upper-threshold, a scrolltoupper event is triggered. When upper_distance is already smaller than the value specified by upper-threshold, the scrolltoupper event will no longer be triggered."
+                    }
+                  ],
+                  "defaultValue": "50",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "upper-threshold-item-count",
+                  "type": "number",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "When scrolling up, when the number of remaining displayable child nodes at the top is first less than upper-threshold-item-count, a scrolltoupper event is triggered. If upper-threshold-item-count is specified, upper-threshold is not effective."
+                    }
+                  ],
+                  "defaultValue": "none",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "use-old-sticky",
+                  "type": "boolean",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "Rollback to the older version's sticky feature."
+                    }
+                  ],
+                  "defaultValue": "false",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "vertical-orientation",
+                  "type": "boolean",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "Control the horizontal and vertical scrolling direction of a list. If it is horizontal scrolling, you need to also set the CSS layout property 'style=\"display:linear; linear-orientation:horizontal\""
+                    }
+                  ],
+                  "defaultValue": "undefined",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                }
+              ]
+            },
+            {
+              "title": "事件",
+              "flag": " ",
+              "children": [
+                {
+                  "name": "bindlayoutcomplete",
+                  "type": "EventHandler | EventHandler",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "This callback function will be triggered when the first screen of the list has finished rendering. On iOS, this callback function will be triggered when list has an update."
+                    }
+                  ],
+                  "defaultValue": "",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "bindlistdebugevent",
+                  "type": "EventHandler",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "Warning: It is not recommended to enable it in the production environment. Output debug information for the list."
+                    }
+                  ],
+                  "defaultValue": "",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "bindscroll",
+                  "type": "EventHandler",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "Scroll event."
+                    }
+                  ],
+                  "defaultValue": "",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "bindscrollstatechange",
+                  "type": "EventHandler",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "This callback function is triggered when the scrolling state of the list changes."
+                    }
+                  ],
+                  "defaultValue": "",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "bindscrolltolower",
+                  "type": "EventHandler",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "Callback function for scrolling to the bottom."
+                    }
+                  ],
+                  "defaultValue": "",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "bindscrolltoloweredge",
+                  "type": "EventHandler",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "scrollview scrolls to lower edge"
+                    }
+                  ],
+                  "defaultValue": "",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "bindscrolltonormalstate",
+                  "type": "EventHandler",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "scrollview scrolls to normal position. Not at upper or lower edge"
+                    }
+                  ],
+                  "defaultValue": "",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "bindscrolltoupper",
+                  "type": "EventHandler",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "Callback function for scrolling to the top."
+                    }
+                  ],
+                  "defaultValue": "",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "bindscrolltoupperedge",
+                  "type": "EventHandler",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "scrollview scrolls to upper edge"
+                    }
+                  ],
+                  "defaultValue": "",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ListItemProps",
+      "flag": "###",
+      "children": [
+        {
+          "title": "属性",
+          "flag": " ",
+          "children": [
+            {
+              "title": "属性",
+              "flag": " ",
+              "children": [
+                {
+                  "name": "estimated-height",
+                  "type": "number",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "Preset height to control the placeholder height (in physical pixels) of the view while the list component has not finished rendering. The more accurately it is set, the less flickering the list will have."
+                    }
+                  ],
+                  "defaultValue": "undefined",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "estimated-height-px",
+                  "type": "number",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "Preset height to control the placeholder height of the view while the list component has not finished rendering. The more accurately it is set, the less flickering the list will have."
+                    }
+                  ],
+                  "defaultValue": "undefined",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "estimated-main-axis-size-px",
+                  "type": "number",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "Preset size in main scroll axis to control the placeholder size of the view while the list component has not finished rendering. The more accurately it is set, the less flickering the list will have."
+                    }
+                  ],
+                  "defaultValue": "undefined",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "full-span",
+                  "type": "boolean",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "Adding the "
+                    },
+                    {
+                      "kind": "code",
+                      "text": "`full-span`"
+                    },
+                    {
+                      "kind": "text",
+                      "text": " attribute to "
+                    },
+                    {
+                      "kind": "code",
+                      "text": "`<list-item/>`"
+                    },
+                    {
+                      "kind": "text",
+                      "text": " will make it occupy a single line. You need to configure "
+                    },
+                    {
+                      "kind": "inline-tag",
+                      "tag": "@link",
+                      "text": "list-type",
+                      "target": 164
+                    },
+                    {
+                      "kind": "text",
+                      "text": " correctly to make the list enter a multi-column layout for this to work."
+                    }
+                  ],
+                  "defaultValue": "undefined",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "item-key",
+                  "type": "string",
+                  "summary": [],
+                  "defaultValue": "",
+                  "isOption": false,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "recyclable",
+                  "type": "boolean",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "Control whether the list-item can be recycled. If set to false, the list-item will not be recycled after being scrolled off the screen, and do not need to be re-rendered when they come back on the screen. The default value is true."
+                    }
+                  ],
+                  "defaultValue": "true",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": true
+                },
+                {
+                  "name": "sticky-bottom",
+                  "type": "boolean",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "sticky bottom effect. Not compatible with flatten."
+                    }
+                  ],
+                  "defaultValue": "false",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "sticky-top",
+                  "type": "boolean",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "sticky top effect. Not compatible with flatten."
+                    }
+                  ],
+                  "defaultValue": "false",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                }
+              ]
+            },
+            {
+              "title": "事件",
+              "flag": " ",
+              "children": [
+                {
+                  "name": "bindnodeappear",
+                  "type": "EventHandler",
+                  "summary": null,
+                  "defaultValue": "",
+                  "isOption": true,
+                  "isSupportIOS": false,
+                  "isSupportAndroid": false,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "bindnodedisappear",
+                  "type": "EventHandler",
+                  "summary": null,
+                  "defaultValue": "",
+                  "isOption": true,
+                  "isSupportIOS": false,
+                  "isSupportAndroid": false,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "bindsnap",
+                  "type": "EventHandler",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "Snap callback"
+                    }
+                  ],
+                  "defaultValue": "",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "autoScroll",
+      "type": "method",
+      "summary": [
+        {
+          "kind": "text",
+          "text": "Whether to stop automatically when sliding to the bottom."
+        }
+      ],
+      "description": "Whether to stop automatically when sliding to the bottom.",
+      "params": {
+        "autoStop": {
+          "type": "boolean",
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Whether to stop automatically when sliding to the bottom."
+            }
+          ],
+          "defaultValue": "true",
+          "isOption": false
+        },
+        "rate": {
+          "type": "string",
+          "summary": [
+            {
+              "kind": "text",
+              "text": "The distance of each second's scrolling, which supports positive and negative values. The unit of distance can be \"px\", \"rpx\", \"ppx\", or null (for iOS, the value must be greater than 1/screen.scale px)."
+            }
+          ],
+          "defaultValue": "",
+          "isOption": false
+        },
+        "start": {
+          "type": "boolean",
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Start/stop automatic scrolling."
+            }
+          ],
+          "defaultValue": "false",
+          "isOption": false
+        }
+      },
+      "hasSuccess": false,
+      "hasFail": false,
+      "isSupportIOS": true,
+      "isSupportAndroid": true,
+      "isSupportHarmony": false,
+      "codeExample": {
+        "method": "autoScroll",
+        "params": {
+          "autoStop": {
+            "type": "boolean",
+            "summary": [
+              {
+                "kind": "text",
+                "text": "Whether to stop automatically when sliding to the bottom."
+              }
+            ],
+            "defaultValue": "true",
+            "isOption": false
+          },
+          "rate": {
+            "type": "string",
+            "summary": [
+              {
+                "kind": "text",
+                "text": "The distance of each second's scrolling, which supports positive and negative values. The unit of distance can be \"px\", \"rpx\", \"ppx\", or null (for iOS, the value must be greater than 1/screen.scale px)."
+              }
+            ],
+            "defaultValue": "",
+            "isOption": false
+          },
+          "start": {
+            "type": "boolean",
+            "summary": [
+              {
+                "kind": "text",
+                "text": "Start/stop automatic scrolling."
+              }
+            ],
+            "defaultValue": "false",
+            "isOption": false
+          }
+        },
+        "hasCallbacks": false
+      }
+    },
+    {
+      "name": "getVisibleCells",
+      "type": "method",
+      "summary": null,
+      "description": "调用 getVisibleCells 方法。",
+      "params": {},
+      "hasSuccess": false,
+      "hasFail": false,
+      "isSupportIOS": false,
+      "isSupportAndroid": false,
+      "isSupportHarmony": false,
+      "codeExample": {
+        "method": "getVisibleCells",
+        "params": {},
+        "hasCallbacks": false
+      }
+    },
+    {
+      "name": "getVisibleItemsPositions",
+      "type": "method",
+      "summary": null,
+      "description": "调用 getVisibleItemsPositions 方法。",
+      "params": {},
+      "hasSuccess": false,
+      "hasFail": false,
+      "isSupportIOS": false,
+      "isSupportAndroid": false,
+      "isSupportHarmony": false,
+      "codeExample": {
+        "method": "getVisibleItemsPositions",
+        "params": {},
+        "hasCallbacks": false
+      }
+    },
+    {
+      "name": "initCache",
+      "type": "method",
+      "summary": null,
+      "description": "调用 initCache 方法。",
+      "params": {},
+      "hasSuccess": false,
+      "hasFail": false,
+      "isSupportIOS": false,
+      "isSupportAndroid": false,
+      "isSupportHarmony": false,
+      "codeExample": {
+        "method": "initCache",
+        "params": {},
+        "hasCallbacks": false
+      }
+    },
+    {
+      "title": "LayoutCompleteEvent",
+      "flag": "###",
+      "children": [
+        {
+          "title": "属性",
+          "flag": " ",
+          "children": [
+            {
+              "title": "属性",
+              "flag": " ",
+              "children": [
+                {
+                  "name": "detail",
+                  "type": "Record<string, unknown>",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "Layout details"
+                    }
+                  ],
+                  "defaultValue": "",
+                  "isOption": true,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ListAttachedCell",
+      "flag": "###",
+      "children": [
+        {
+          "title": "属性",
+          "flag": " ",
+          "children": [
+            {
+              "title": "属性",
+              "flag": " ",
+              "children": [
+                {
+                  "name": "bottom",
+                  "type": "number",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "bottom"
+                    }
+                  ],
+                  "defaultValue": "",
+                  "isOption": false,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "id",
+                  "type": "string",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "id"
+                    }
+                  ],
+                  "defaultValue": "",
+                  "isOption": false,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "left",
+                  "type": "number",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "left"
+                    }
+                  ],
+                  "defaultValue": "",
+                  "isOption": false,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "position",
+                  "type": "number",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "postion"
+                    }
+                  ],
+                  "defaultValue": "",
+                  "isOption": false,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "right",
+                  "type": "number",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "right"
+                    }
+                  ],
+                  "defaultValue": "",
+                  "isOption": false,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "top",
+                  "type": "number",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "top"
+                    }
+                  ],
+                  "defaultValue": "",
+                  "isOption": false,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ListDebugInfoEvent",
+      "flag": "###",
+      "children": [
+        {
+          "title": "属性",
+          "flag": " ",
+          "children": [
+            {
+              "title": "属性",
+              "flag": " ",
+              "children": [
+                {
+                  "name": "detail",
+                  "type": "Record<string, unknown>",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "Additional information."
+                    }
+                  ],
+                  "defaultValue": "",
+                  "isOption": false,
+                  "isSupportIOS": false,
+                  "isSupportAndroid": false,
+                  "isSupportHarmony": false
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ListDetail",
+      "flag": "###",
+      "children": [
+        {
+          "title": "属性",
+          "flag": " ",
+          "children": [
+            {
+              "title": "属性",
+              "flag": " ",
+              "children": [
+                {
+                  "name": "attachedCells",
+                  "type": "ListAttachedCell[]",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "attached cells"
+                    }
+                  ],
+                  "defaultValue": "",
+                  "isOption": false,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "deltaY",
+                  "type": "number",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "scrolling delta at y axis"
+                    }
+                  ],
+                  "defaultValue": "",
+                  "isOption": false,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "scrollTop",
+                  "type": "number",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "scroll top from start"
+                    }
+                  ],
+                  "defaultValue": "",
+                  "isOption": false,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ListEvent",
+      "flag": "###",
+      "children": [
+        {
+          "title": "属性",
+          "flag": " ",
+          "children": []
+        }
+      ]
+    },
+    {
+      "title": "ListItemInfo",
+      "flag": "###",
+      "children": [
+        {
+          "title": "属性",
+          "flag": " ",
+          "children": [
+            {
+              "title": "属性",
+              "flag": " ",
+              "children": [
+                {
+                  "name": "height",
+                  "type": "number",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "Height of the item, in px."
+                    }
+                  ],
+                  "defaultValue": "",
+                  "isOption": false,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "isBinding",
+                  "type": "boolean",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "When the list is running in multi-thread mode, this property indicates whether the item is currently being rendered and has not finished rendering. In this state, the item will have a default height that is the same as the list's height or an estimated height if one has been set."
+                    }
+                  ],
+                  "defaultValue": "",
+                  "isOption": false,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "itemKey",
+                  "type": "string",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "ItemKey of the list-item."
+                    }
+                  ],
+                  "defaultValue": "",
+                  "isOption": false,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "originX",
+                  "type": "number",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "The x coordinate of the item's top-left corner, in px. The axis is based on the total length of the content rather than the visible area or screen."
+                    }
+                  ],
+                  "defaultValue": "",
+                  "isOption": false,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "originY",
+                  "type": "number",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "The y coordinate of the item's top-left corner, in px. The axis is based on the total length of the content rather than the visible area or screen."
+                    }
+                  ],
+                  "defaultValue": "",
+                  "isOption": false,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "updated",
+                  "type": "boolean",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "Show if the list-item is currently being updated in this layout."
+                    }
+                  ],
+                  "defaultValue": "",
+                  "isOption": false,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "width",
+                  "type": "number",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "Width of the item, in px."
+                    }
+                  ],
+                  "defaultValue": "",
+                  "isOption": false,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ListItemSnapAlignment",
+      "flag": "###",
+      "children": [
+        {
+          "title": "属性",
+          "flag": " ",
+          "children": [
+            {
+              "title": "属性",
+              "flag": " ",
+              "children": [
+                {
+                  "name": "factor",
+                  "type": "number",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "Paging factor, 0.0 means align to the top, while 1.0 means align to the bottom."
+                    }
+                  ],
+                  "defaultValue": "",
+                  "isOption": false,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "offset",
+                  "type": "number",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "In addition to the parameter of factor, an offset for alignment can be set, in px."
+                    }
+                  ],
+                  "defaultValue": "",
+                  "isOption": false,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ListLayoutFinishEvent",
+      "flag": "###",
+      "children": [
+        {
+          "title": "属性",
+          "flag": " ",
+          "children": [
+            {
+              "title": "属性",
+              "flag": " ",
+              "children": [
+                {
+                  "name": "detail",
+                  "type": "Record<string, unknown>",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "Additional information."
+                    }
+                  ],
+                  "defaultValue": "",
+                  "isOption": false,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ListScrollEvent",
+      "flag": "###",
+      "children": [
+        {
+          "title": "属性",
+          "flag": " ",
+          "children": []
+        }
+      ]
+    },
+    {
+      "title": "ListScrollInfo",
+      "flag": "###",
+      "children": [
+        {
+          "title": "属性",
+          "flag": " ",
+          "children": [
+            {
+              "title": "属性",
+              "flag": " ",
+              "children": [
+                {
+                  "name": "attachedCells",
+                  "type": "ListAttachedCell[]",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "attached cells"
+                    }
+                  ],
+                  "defaultValue": "",
+                  "isOption": false,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "deltaX",
+                  "type": "number",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "X-axis scroll delta for this scroll. It's always 0 in some non-scroll related events."
+                    }
+                  ],
+                  "defaultValue": "",
+                  "isOption": false,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "deltaY",
+                  "type": "number",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "Y-axis scroll delta for this scroll. It's always 0 in some non-scroll related events."
+                    }
+                  ],
+                  "defaultValue": "",
+                  "isOption": false,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "eventSource",
+                  "type": "ListEventSource",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "Source of the event."
+                    }
+                  ],
+                  "defaultValue": "",
+                  "isOption": false,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "listHeight",
+                  "type": "number",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "list height"
+                    }
+                  ],
+                  "defaultValue": "",
+                  "isOption": false,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "listWidth",
+                  "type": "number",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "list width"
+                    }
+                  ],
+                  "defaultValue": "",
+                  "isOption": false,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "scrollHeight",
+                  "type": "number",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "scroll content height"
+                    }
+                  ],
+                  "defaultValue": "",
+                  "isOption": false,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "scrollLeft",
+                  "type": "number",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "scroll left from start"
+                    }
+                  ],
+                  "defaultValue": "",
+                  "isOption": false,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "scrollTop",
+                  "type": "number",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "scroll top from start"
+                    }
+                  ],
+                  "defaultValue": "",
+                  "isOption": false,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                },
+                {
+                  "name": "scrollWidth",
+                  "type": "number",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "scroll content width"
+                    }
+                  ],
+                  "defaultValue": "",
+                  "isOption": false,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ListScrollStateChangeEvent",
+      "flag": "###",
+      "children": [
+        {
+          "title": "属性",
+          "flag": " ",
+          "children": [
+            {
+              "title": "属性",
+              "flag": " ",
+              "children": [
+                {
+                  "name": "detail",
+                  "type": "Record<string, unknown>",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "Additional information."
+                    }
+                  ],
+                  "defaultValue": "",
+                  "isOption": false,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ListScrollToLowerEdgeEvent",
+      "flag": "###",
+      "children": [
+        {
+          "title": "属性",
+          "flag": " ",
+          "children": []
+        }
+      ]
+    },
+    {
+      "title": "ListScrollToLowerEvent",
+      "flag": "###",
+      "children": [
+        {
+          "title": "属性",
+          "flag": " ",
+          "children": []
+        }
+      ]
+    },
+    {
+      "title": "ListScrollToNormalStateEvent",
+      "flag": "###",
+      "children": [
+        {
+          "title": "属性",
+          "flag": " ",
+          "children": []
+        }
+      ]
+    },
+    {
+      "title": "ListScrollToUpperEdgeEvent",
+      "flag": "###",
+      "children": [
+        {
+          "title": "属性",
+          "flag": " ",
+          "children": []
+        }
+      ]
+    },
+    {
+      "title": "ListScrollToUpperEvent",
+      "flag": "###",
+      "children": [
+        {
+          "title": "属性",
+          "flag": " ",
+          "children": []
+        }
+      ]
+    },
+    {
+      "title": "ListSnapEvent",
+      "flag": "###",
+      "children": [
+        {
+          "title": "属性",
+          "flag": " ",
+          "children": [
+            {
+              "title": "属性",
+              "flag": " ",
+              "children": [
+                {
+                  "name": "detail",
+                  "type": "Record<string, unknown>",
+                  "summary": [
+                    {
+                      "kind": "text",
+                      "text": "Additional information."
+                    }
+                  ],
+                  "defaultValue": "",
+                  "isOption": false,
+                  "isSupportIOS": true,
+                  "isSupportAndroid": true,
+                  "isSupportHarmony": false
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "removeStickyView",
+      "type": "method",
+      "summary": null,
+      "description": "调用 removeStickyView 方法。",
+      "params": {},
+      "hasSuccess": false,
+      "hasFail": false,
+      "isSupportIOS": false,
+      "isSupportAndroid": false,
+      "isSupportHarmony": false,
+      "codeExample": {
+        "method": "removeStickyView",
+        "params": {},
+        "hasCallbacks": false
+      }
+    },
+    {
+      "name": "scrollToPosition",
+      "type": "method",
+      "summary": [
+        {
+          "kind": "text",
+          "text": "Specify the alignment method when scrolling to a target position.\n \"none\": Scroll to make the node fully visible in the list. If the node is above the visible range of the list, it will scroll to align the top of the node with the top of the list. If the node is below the visible range of the list, it will scroll to align the bottom of the node with the bottom of the list. If the node is within the visible range of the list, no movement will occur.\n \"bottom\": Scroll to make the node fully visible in the list and align the bottom of the node with the bottom of the list.\n \"top\": Scroll to make the node fully visible in the list and align the top of the node with the top of the list.\n \"middle\": Scroll to make the node fully visible in the list and align the center of the node with the center of the list. This is only supported in LynxSDK 2.12 and above."
+        }
+      ],
+      "description": "Specify the alignment method when scrolling to a target position.\n \"none\": Scroll to make the node fully visible in the list. If the node is above the visible range of the list, it will scroll to align the top of the node with the top of the list. If the node is below the visible range of the list, it will scroll to align the bottom of the node with the bottom of the list. If the node is within the visible range of the list, no movement will occur.\n \"bottom\": Scroll to make the node fully visible in the list and align the bottom of the node with the bottom of the list.\n \"top\": Scroll to make the node fully visible in the list and align the top of the node with the top of the list.\n \"middle\": Scroll to make the node fully visible in the list and align the center of the node with the center of the list. This is only supported in LynxSDK 2.12 and above.",
+      "params": {
+        "alignTo": {
+          "type": "'none' | 'bottom' | 'top' | 'middle'",
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Specify the alignment method when scrolling to a target position.\n \"none\": Scroll to make the node fully visible in the list. If the node is above the visible range of the list, it will scroll to align the top of the node with the top of the list. If the node is below the visible range of the list, it will scroll to align the bottom of the node with the bottom of the list. If the node is within the visible range of the list, no movement will occur.\n \"bottom\": Scroll to make the node fully visible in the list and align the bottom of the node with the bottom of the list.\n \"top\": Scroll to make the node fully visible in the list and align the top of the node with the top of the list.\n \"middle\": Scroll to make the node fully visible in the list and align the center of the node with the center of the list. This is only supported in LynxSDK 2.12 and above."
+            }
+          ],
+          "defaultValue": "none",
+          "isOption": true
+        },
+        "index": {
+          "type": "number",
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Specify the index of the node to scroll to, with a value range of [0, itemCount)."
+            }
+          ],
+          "defaultValue": "",
+          "isOption": false
+        },
+        "offset": {
+          "type": "number",
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Align the node with alignTo, and then move the node downward by a length of offset."
+            }
+          ],
+          "defaultValue": "",
+          "isOption": true
+        },
+        "position": {
+          "type": "number",
+          "summary": [
+            {
+              "kind": "text",
+              "text": "From version 2.17 and above, it is recommended to use 'index' instead. Specify the index of the node to scroll to, with a value range of [0, itemCount)."
+            }
+          ],
+          "defaultValue": "",
+          "isOption": false
+        },
+        "smooth": {
+          "type": "boolean",
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Enable scroll animation during scroll."
+            }
+          ],
+          "defaultValue": "false",
+          "isOption": true
+        },
+        "useScroller": {
+          "type": "boolean",
+          "summary": [
+            {
+              "kind": "text",
+              "text": "When enabled, it uses the refactored logic which helps to solve some existing bugs. It is recommended to enable it."
+            }
+          ],
+          "defaultValue": "false",
+          "isOption": true
+        }
+      },
+      "hasSuccess": false,
+      "hasFail": false,
+      "isSupportIOS": true,
+      "isSupportAndroid": true,
+      "isSupportHarmony": false,
+      "codeExample": {
+        "method": "scrollToPosition",
+        "params": {
+          "alignTo": {
+            "type": "'none' | 'bottom' | 'top' | 'middle'",
+            "summary": [
+              {
+                "kind": "text",
+                "text": "Specify the alignment method when scrolling to a target position.\n \"none\": Scroll to make the node fully visible in the list. If the node is above the visible range of the list, it will scroll to align the top of the node with the top of the list. If the node is below the visible range of the list, it will scroll to align the bottom of the node with the bottom of the list. If the node is within the visible range of the list, no movement will occur.\n \"bottom\": Scroll to make the node fully visible in the list and align the bottom of the node with the bottom of the list.\n \"top\": Scroll to make the node fully visible in the list and align the top of the node with the top of the list.\n \"middle\": Scroll to make the node fully visible in the list and align the center of the node with the center of the list. This is only supported in LynxSDK 2.12 and above."
+              }
+            ],
+            "defaultValue": "none",
+            "isOption": true
+          },
+          "index": {
+            "type": "number",
+            "summary": [
+              {
+                "kind": "text",
+                "text": "Specify the index of the node to scroll to, with a value range of [0, itemCount)."
+              }
+            ],
+            "defaultValue": "",
+            "isOption": false
+          },
+          "offset": {
+            "type": "number",
+            "summary": [
+              {
+                "kind": "text",
+                "text": "Align the node with alignTo, and then move the node downward by a length of offset."
+              }
+            ],
+            "defaultValue": "",
+            "isOption": true
+          },
+          "position": {
+            "type": "number",
+            "summary": [
+              {
+                "kind": "text",
+                "text": "From version 2.17 and above, it is recommended to use 'index' instead. Specify the index of the node to scroll to, with a value range of [0, itemCount)."
+              }
+            ],
+            "defaultValue": "",
+            "isOption": false
+          },
+          "smooth": {
+            "type": "boolean",
+            "summary": [
+              {
+                "kind": "text",
+                "text": "Enable scroll animation during scroll."
+              }
+            ],
+            "defaultValue": "false",
+            "isOption": true
+          },
+          "useScroller": {
+            "type": "boolean",
+            "summary": [
+              {
+                "kind": "text",
+                "text": "When enabled, it uses the refactored logic which helps to solve some existing bugs. It is recommended to enable it."
+              }
+            ],
+            "defaultValue": "false",
+            "isOption": true
+          }
+        },
+        "hasCallbacks": false
+      }
+    }
+  ]
+}

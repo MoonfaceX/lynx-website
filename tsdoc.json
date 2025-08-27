@@ -1,0 +1,47 @@
+// This file is read by tools that parse documentation comments conforming to the TSDoc standard.
+// It should be published with your NPM package.  It should not be tracked by Git.
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/tsdoc/v0/tsdoc.schema.json",
+  "tagDefinitions": [
+    {
+      "tagName": "@iOS",
+      "syntaxKind": "modifier"
+    },
+    {
+      "tagName": "@Android",
+      "syntaxKind": "modifier"
+    },
+    {
+      "tagName": "@H",
+      "syntaxKind": "modifier"
+    },
+    {
+      "tagName": "@Harmony",
+      "syntaxKind": "modifier"
+    },
+    {
+      "tagName": "@Clay",
+      "syntaxKind": "modifier"
+    },
+    {
+      "tagName": "@since",
+      "syntaxKind": "block"
+    }
+  ],
+  "supportForTags": {
+    "@iOS": true,
+    "@Android": true,
+    "@Harmony": true,
+    "@Clay": true,
+    "@experimental": true,
+    "@since": true,
+    "@defaultValue": true,
+    "@eventProperty": true,
+    "@deprecated": true,
+    "@example": true,
+    "@link": true,
+    "@remarks": true,
+    "@param": true,
+    "@see": true
+  }
+}

@@ -1,0 +1,132 @@
+.ui-api-table-list {
+  --semi-color-text-0: 210 40% 98%;
+  --semi-color-bg-1: 222.2 84% 4.9%;
+  --semi-color-bg-0: 222.2 84% 4.9%;
+}
+
+.dark .ui-api-table-list {
+  --semi-color-text-2: 210 40% 98%;
+  --semi-color-border: #ffffff11;
+}
+
+/* 属性项容器 */
+.ui-api-property-item {
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--semi-color-border, #e5e7eb);
+  padding-bottom: 1.5rem;
+}
+
+.ui-api-property-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+/* 属性标题区域 */
+.ui-api-property-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.ui-api-property-name {
+  margin: 0 !important;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.ui-api-property-name code {
+  background: transparent;
+  padding: 0;
+  font-size: inherit;
+  color: var(--semi-color-primary, #3b82f6);
+}
+
+.ui-api-platform-badges {
+  margin-left: auto;
+}
+
+/* 类型定义代码块 */
+.ui-api-type-definition {
+  margin-bottom: 1rem;
+}
+
+.ui-api-code-block {
+  background: var(--semi-color-fill-0, #f8fafc);
+  border: 1px solid var(--semi-color-border, #e5e7eb);
+  border-radius: 6px;
+  padding: 1rem;
+  margin: 0;
+  overflow-x: auto;
+  font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas,
+    'Courier New', monospace;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.ui-api-code-block code {
+  background: transparent;
+  padding: 0;
+  font-size: inherit;
+  color: var(--semi-color-text-0, #1f2937);
+}
+
+.ui-api-comment {
+  color: var(--semi-color-text-2, #6b7280);
+  font-style: italic;
+}
+
+/* 属性描述 */
+.ui-api-property-description {
+  color: var(--semi-color-text-1, #374151);
+  line-height: 1.7;
+}
+
+.ui-api-property-description p {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+.ui-api-property-description p:last-child {
+  margin-bottom: 0;
+}
+
+/* 深色模式适配 */
+.dark .ui-api-code-block {
+  background: var(--semi-color-fill-1, #1f2937);
+  border-color: var(--semi-color-border, #374151);
+}
+
+.dark .ui-api-code-block code {
+  color: var(--semi-color-text-0, #f9fafb);
+}
+
+.dark .ui-api-property-description {
+  color: var(--semi-color-text-1, #d1d5db);
+}
+
+/* 旧的表格样式保留（向后兼容） */
+.ui-api-table {
+  --semi-color-text-0: 210 40% 98%;
+  --semi-color-bg-1: 222.2 84% 4.9%;
+  --semi-color-bg-0: 222.2 84% 4.9%;
+}
+
+.dark .ui-api-table {
+  --semi-color-text-2: 210 40% 98%;
+  --semi-color-border: #ffffff11;
+}
+
+.api-table-desc-row {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.7143;
+}
+
+.api-table-type {
+  color: plum;
+}
+
+.api-table-default {
+  color: blanchedalmond;
+}
